@@ -1,0 +1,17 @@
+networks:
+  app_ecommerce:
+
+
+services:
+
+  database:
+    image: mysql:latest
+    environment:
+      MYSQL_DATABASE: ecommerce
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_ROOT_USER: appuser
+      MYSQL_PASSWORD: abc123
+    networks:
+      - app_ecommerce
+    ports:
+      - 3306:3306
