@@ -1,17 +1,17 @@
 /* eslint-disable prettier/prettier */
-import { type } from 'os';
+
 import { Client } from 'src/client/entities/client.entity';
 import { Product } from 'src/product/entities/product.entity';
-import { Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 export class Order {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @ManyToOne(type => Client)
-  @JoinColumn({ referencedColumnName: "cpf" })
+  @ManyToOne(type => Client, clients => Client)
   client: Client
   
-  
+  @OneToMany(type => Product, product => Product)
+  products: Product
 }

@@ -1,4 +1,6 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+/* eslint-disable prettier/prettier */
+import { Order } from 'src/order/entities/order.entity';
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
 
 @Entity()
 export class Client {
@@ -19,4 +21,7 @@ export class Client {
 
   @Column()
   status: boolean;
+
+  @OneToMany(type => Order, client => Client)
+  clients: Client [];
 }
