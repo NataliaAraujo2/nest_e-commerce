@@ -1,5 +1,5 @@
-import { Order } from 'src/order/entities/order.entity';
-import { Entity, Column, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
+/* eslint-disable prettier/prettier */
+import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 export class Product {
@@ -20,7 +20,4 @@ export class Product {
 
   @Column()
   status: boolean;
-
-  @ManyToOne(type => Product, products => Product)
-  products: Product[];
 }
