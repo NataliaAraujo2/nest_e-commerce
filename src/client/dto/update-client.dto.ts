@@ -1,6 +1,6 @@
 import { PartialType } from '@nestjs/swagger';
 import { CreateClientDto } from './create-client.dto';
-import { IsBoolean, IsString } from 'class-validator';
+import { IsString } from 'class-validator';
 
 export class UpdateClientDto extends PartialType(CreateClientDto) {
   @IsString()
@@ -14,7 +14,4 @@ export class UpdateClientDto extends PartialType(CreateClientDto) {
 
   @IsString()
   email: string;
-
-  @IsBoolean()
-  status: boolean;
 }

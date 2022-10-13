@@ -1,4 +1,5 @@
 /* eslint-disable prettier/prettier */
+
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
@@ -18,6 +19,5 @@ export class Client {
   @Column({ length: 500 })
   email: string;
 
-  @Column()
-  status: boolean;
+  
 }

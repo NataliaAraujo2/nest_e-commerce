@@ -1,5 +1,5 @@
 import { PartialType } from '@nestjs/swagger';
-import { IsBoolean, IsNumber, IsString } from 'class-validator';
+import { IsNumber, IsString } from 'class-validator';
 import { CreateProductDto } from './create-product.dto';
 
 export class UpdateProductDto extends PartialType(CreateProductDto) {
@@ -7,14 +7,8 @@ export class UpdateProductDto extends PartialType(CreateProductDto) {
   product: string;
 
   @IsNumber()
-  price: string;
+  price: number;
 
   @IsString()
   description: string;
-
-  @IsString()
-  category: string;
-
-  @IsBoolean()
-  status: boolean;
 }

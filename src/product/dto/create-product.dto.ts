@@ -1,18 +1,12 @@
-import { IsBoolean, IsNumber, IsString } from 'class-validator';
+import { IsNumber, IsString } from 'class-validator';
 
 export class CreateProductDto {
   @IsString()
   product: string;
 
   @IsNumber()
-  price: string;
+  price: number;
 
   @IsString()
   description: string;
-
-  @IsString()
-  category: string;
-
-  @IsBoolean()
-  status: boolean;
 }

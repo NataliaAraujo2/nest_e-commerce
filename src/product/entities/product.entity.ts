@@ -1,4 +1,5 @@
 /* eslint-disable prettier/prettier */
+
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
@@ -9,15 +10,14 @@ export class Product {
   @Column({ length: 100 })
   product: string;
 
-  @Column({ length: 4 })
-  price: string;
+  @Column()
+  price: number;
 
   @Column({ length: 8 })
   description: string;
 
-  @Column({ length: 500 })
-  category: string;
-
   @Column()
-  status: boolean;
+  quantity: string;
+
+ 
 }

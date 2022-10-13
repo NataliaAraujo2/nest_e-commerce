@@ -1,11 +1,15 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable prettier/prettier */
 import { Inject, Injectable } from '@nestjs/common';
+import { filter } from 'rxjs';
+import { Repository } from 'typeorm';
 import { CreateProductDto } from './dto/create-product.dto';
 import { UpdateProductDto } from './dto/update-product.dto';
-import { Repository } from 'typeorm';
 import { Product } from './entities/product.entity';
 
 @Injectable()
 export class ProductService {
+  public products: Product [] = [];
   constructor(
     @Inject('PRODUCT_REPOSITORY')
     private productRepository: Repository<Product>,
@@ -23,11 +27,13 @@ export class ProductService {
     return this.productRepository.findOne({ where: { id } });
   }
 
+  remove(id: number) {
+    return this.productRepository.delete(id);
+  }
+
   update(id: number, updateProductDto: UpdateProductDto) {
     return this.productRepository.update(id, updateProductDto);
   }
 
-  remove(id: number) {
-    return this.productRepository.delete(id);
-  }
-}
+
+}    

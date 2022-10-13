@@ -1,4 +1,4 @@
-import { IsBoolean, IsString } from 'class-validator';
+import { IsString } from 'class-validator';
 
 export class CreateClientDto {
   @IsString()
@@ -12,7 +12,4 @@ export class CreateClientDto {
 
   @IsString()
   email: string;
-
-  @IsBoolean()
-  status: boolean;
 }
