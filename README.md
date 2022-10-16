@@ -1,2 +1,2 @@
-PREENCHER O README COM DETALHES DE COMO RODAR A APLICAÇÃO, COMO CRIAR O BANCO OU QUALQUER ITEM NECESSÁRIO PARA RODAR SEU PROJETO.
-E ENVIAR A COLLECTION COM ENDPOINTS DO SISTEMA (VIA POSTMAN ou IMSONIA)
+A conexão com o banco de dados pode ser feita através do docker-compose up.
+Foi utilizado o ORM TypeORM e o Framework Nestjs. O sistema gerenciado do banco de dados escolhido foi o MySQL.
