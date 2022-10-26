@@ -8,10 +8,26 @@ services:
     image: mysql:latest
     environment:
       MYSQL_DATABASE: ecommerce
-      MYSQL_ROOT_PASSWORD: 123456
-      MYSQL_ROOT_USER: appuser
+      MYSQL_ROOT_PASSWORD: abc123
+      MYSQL_USER: appuser
       MYSQL_PASSWORD: abc123
     networks:
       - app_ecommerce
     ports:
       - 3306:3306
+
+  ecommerce:
+    build: .
+    networks:
+      - app_ecommerce
+    environment:
+      DATABASE_HOST: database
+      DATABASE_USER: root
+      DATABASE_PASS: abc123
+      DATABASE_NAME: ecommerce
+    depends_on:
+      - database
+    restart: always
+    volumes:
+      - .:/srv/app
+   
