@@ -22,12 +22,13 @@ services:
       - app_ecommerce
     environment:
       DATABASE_HOST: database
-      DATABASE_USER: root
+      DATABASE_USER: appuser
       DATABASE_PASS: abc123
       DATABASE_NAME: ecommerce
     depends_on:
       - database
-    restart: always
+    restart: on-failure
     volumes:
       - .:/srv/app
+    
    
