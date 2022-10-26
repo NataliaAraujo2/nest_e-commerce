@@ -30,5 +30,5 @@ services:
     restart: on-failure
     volumes:
       - .:/srv/app
-    command: sh -c "npm install && npm run start:dev"
+    command: sh -c "npm install"
    

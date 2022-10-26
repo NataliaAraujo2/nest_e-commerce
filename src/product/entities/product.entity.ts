@@ -13,11 +13,10 @@ export class Product {
   @Column()
   price: number;
 
-  @Column({ length: 8 })
+  @Column({ length: 100 })
   description: string;
 
-  @Column()
-  quantity: string;
+  @Column({ length: 100 })
+  category: string;
 
- 
 }

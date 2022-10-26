@@ -3,5 +3,7 @@ Foi utilizado o ORM TypeORM e o Framework Nestjs. O sistema gerenciado do banco 
 
 Para rodar o projeto é necessário realizar os seguintes comandos:
 
--npm install
--npm run start:dev
+- docker-compose up
+- npm run start:dev
+
+Copiar o conteúdo do file products.json (src/product/products.json) e colar na Request POST product do Insominia.

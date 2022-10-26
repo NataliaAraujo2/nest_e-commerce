@@ -1,0 +1,27 @@
+[
+	{
+        "product": "Arroz",
+        "price":25,
+        "description":"Tio João 5Kg",
+        "category": "Alimento"
+    },
+
+    {
+        "product": "Feijão",
+        "price":22,
+        "description":"Camil Fradinho 2kg",
+        "category": "Alimento"
+    },
+    {
+        "product": "Veja",
+        "price":14,
+        "description":"Limpeza Pesada",
+        "category": "Produto de Limpeza"
+    },
+    {
+        "product": "Sanol",
+        "price":22,
+        "description":"Estofados",
+        "category": "Produto de Limpeza"
+    }
+]
