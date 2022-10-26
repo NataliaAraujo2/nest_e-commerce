@@ -9,9 +9,9 @@ export const databaseProviders = [
         type: 'mysql',
         host: process.env.DATABASE_HOST,
         port: 3306,
-        username: process.env.DATABASE_USER,
-        password: process.env.DATABASE_PASS,
-        database: process.env.DATABASE_NAME,
+        username: 'appuser',
+        password: 'abc123',
+        database: 'ecommerce',
         entities: [__dirname + '/../**/*.entity{.ts,.js}'],
         synchronize: true,
       });

@@ -22,7 +22,7 @@ services:
       - app_ecommerce
     environment:
       DATABASE_HOST: database
-      DATABASE_USER: appuser
+      DATABASE_USER: root
       DATABASE_PASS: abc123
       DATABASE_NAME: ecommerce
     depends_on:
