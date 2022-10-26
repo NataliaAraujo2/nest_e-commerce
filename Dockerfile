@@ -12,6 +12,8 @@ RUN npm install -g @nestjs/cli
 RUN npm install --save typeorm mysql2
 RUN npm install -g typescript
 
+RUN npm install
+
 
 
 CMD [ "npm", "run", "start" ]
