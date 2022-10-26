@@ -7,3 +7,5 @@ Para rodar o projeto é necessário realizar os seguintes comandos:
 - npm run start:dev
 
 Copiar o conteúdo do file products.json (src/product/products.json) e colar na Request POST product do Insominia.
+
+A entidade cart ainda não foi desenvolvida.
