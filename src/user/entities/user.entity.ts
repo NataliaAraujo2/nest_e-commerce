@@ -1,6 +1,8 @@
 /* eslint-disable prettier/prettier */
 
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Cart } from 'src/cart/entities/cart.entity';
+import { Order } from 'src/order/entities/order.entity';
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany, JoinColumn, OneToOne } from 'typeorm';
 
 @Entity()
 export class User {
@@ -19,5 +21,11 @@ export class User {
   @Column({ length: 500 })
   email: string;
 
+  @OneToMany(type=>Cart, cart=>cart.id)
+  @JoinColumn()
+  cart:Cart[]
   
+  @OneToOne(type=>Order, order=>order.id)
+  @JoinColumn()
+  order:Order
 }
