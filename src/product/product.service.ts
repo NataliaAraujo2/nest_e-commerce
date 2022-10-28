@@ -1,4 +1,5 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable prettier/prettier */
+/* eslint-disable @typescript-eslint/no-unused-vars */  
 /* eslint-disable prettier/prettier */
 import { Inject, Injectable } from '@nestjs/common';
 import { Repository } from 'typeorm';
@@ -34,9 +35,7 @@ export class ProductService {
     return this.productRepository.update(id, updateProductDto);
   }
 
-  async GetOne(category: string){
-    return this.productRepository.findOne({ where: { category } });
-  } 
+   
 
 
 }    

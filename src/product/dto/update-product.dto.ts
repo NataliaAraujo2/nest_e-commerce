@@ -13,6 +13,4 @@ export class UpdateProductDto extends PartialType(CreateProductDto) {
   @IsString()
   description: string;
 
-  @IsString()
-  category: string;
 }

@@ -23,12 +23,6 @@ export class ProductController {
     return this.productService.findOne(+id);
   }
 
-  @Get(':category')
-  async GetOne(@Param('category') category: string){
-    return this.productService.GetOne(category)
-  }
-  
-
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateClientDto: UpdateProductDto) {
     return this.productService.update(+id, updateClientDto);
