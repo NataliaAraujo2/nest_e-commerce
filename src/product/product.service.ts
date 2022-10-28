@@ -2,6 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */  
 /* eslint-disable prettier/prettier */
 import { Inject, Injectable } from '@nestjs/common';
+
 import { Repository } from 'typeorm';
 import { CreateProductDto } from './dto/create-product.dto';
 import { UpdateProductDto } from './dto/update-product.dto';
@@ -9,11 +10,20 @@ import { Product } from './entities/product.entity';
 
 @Injectable()
 export class ProductService {
-  public products: Product [] = [];
+  
+    
   constructor(
     @Inject('PRODUCT_REPOSITORY')
     private productRepository: Repository<Product>,
+    
   ) {}
+
+  async getProducts(category: number) {
+    const products = await this.productRepository.find({relations: ['category']});
+    return products.filter(products=> products.category.id === category)
+    };
+  
+ 
 
   create(createProductDto: CreateProductDto) {
     return this.productRepository.save(createProductDto);
@@ -23,7 +33,7 @@ export class ProductService {
     return this.productRepository.find();
   }
 
-  findOne(id: number) {
+   findOne(id: number) {
     return this.productRepository.findOne({ where: { id } });
   }
 
@@ -35,7 +45,8 @@ export class ProductService {
     return this.productRepository.update(id, updateProductDto);
   }
 
+ 
+
+
+  }
    
-
-
-}    

@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
-import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
-import { Product } from './product.entity';
+import { Column, Entity, JoinColumn, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
+import { Product } from 'src/product/entities/product.entity'
 
 @Entity()
 export class Category {
@@ -11,5 +11,6 @@ export class Category {
   category: string;
 
   @OneToMany(() => Product, (product) => product.id)
+  @JoinColumn()
   products: Product[];
 }
