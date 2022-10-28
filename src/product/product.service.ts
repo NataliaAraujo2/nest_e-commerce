@@ -34,5 +34,9 @@ export class ProductService {
     return this.productRepository.update(id, updateProductDto);
   }
 
+  async GetOne(category: string){
+    return this.productRepository.findOne({ where: { category } });
+  } 
+
 
 }    
